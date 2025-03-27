@@ -1,0 +1,27 @@
+-r requirements.txt
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+
+# Linting and Formatting
+black>=22.0.0
+flake8>=5.0.0
+isort>=5.10.0
+mypy>=0.950
+
+# Documentation
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.0.0
+sphinx-autodoc-typehints>=1.20.0
+
+# Development Tools
+pre-commit>=2.20.0
+tox>=3.25.0
+twine>=3.8.0
+
+# Type Checking
+types-Pillow>=9.0.0
+types-numpy>=1.23.0
+types-setuptools>=65.0.0 
