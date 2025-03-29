@@ -1,0 +1,19 @@
+from typing import Any, List, Optional, Tuple, Union
+import numpy as np
+
+# Constants
+COLOR_BGR2RGB: int
+COLOR_RGB2GRAY: int
+COLOR_BGR2GRAY: int
+NORM_MINMAX: int
+CV_64F: int
+
+# Type aliases
+Mat = np.ndarray
+
+def imread(filename: str) -> Optional[Mat]: ...
+def imwrite(filename: str, img: Mat) -> bool: ...
+def cvtColor(src: Mat, code: int) -> Mat: ...
+def calcHist(images: List[Mat], channels: List[int], mask: Optional[Mat], histSize: List[int], ranges: List[float]) -> Mat: ...
+def normalize(src: Mat, dst: Optional[Mat], alpha: float, beta: float, norm_type: int) -> Mat: ...
+def Laplacian(src: Mat, ddepth: int) -> Mat: ... 

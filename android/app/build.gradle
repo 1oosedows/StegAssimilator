@@ -1,0 +1,42 @@
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+
+def FLIPPER_VERSION = "0.182.0"
+
+import com.android.build.OutputFile
+
+android {
+    namespace "com.stegassimilator"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    ndkVersion "23.1.7779620"
+
+    defaultConfig {
+        applicationId "com.stegassimilator"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets']
+            assets.includes = ['python/**']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "com.facebook.react:react-native:+"
+    implementation "org.python:jython-standalone:2.7.3"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
+} 
